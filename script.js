@@ -58,7 +58,10 @@ $(document).ready(function() {
 
 
   // load any saved data from localStorage
-  
+  $(".time-block").each(function() {
+    $(this).children(".description").text(localStorage.getItem($(this).attr("id")));
+  });
+
 
   // display current day on page
   $("#currentDay").text(moment().format("dddd, MMMM Do"));
