@@ -10,7 +10,7 @@ $(document).ready(function() {
     console.log('time:', time);
 
     // save the value in localStorage as time
-    
+    localStorage.setItem(time, value);
   });
 
   function hourUpdater() {
@@ -46,10 +46,16 @@ $(document).ready(function() {
     });
   }
 
-  hourUpdater();
 
+  hourUpdater();
   // set up interval to check if current time needs to be updated
   // which means execute hourUpdater function every 15 seconds
+  setInterval(function() {
+    hourUpdater();
+  }, 15000);
+  
+
+
 
   // load any saved data from localStorage
   
