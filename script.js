@@ -23,7 +23,6 @@ $(document).ready(function() {
       var blockHour = parseInt($(this).attr("id").split("-")[1]);
 
       console.log("block hour:", blockHour);
-
       // check if we've moved past this time
       // if the current hour is greater than the block hour
       // then add class "past"
@@ -32,13 +31,13 @@ $(document).ready(function() {
       // else
       // remove class "past", remove class "present", add class "future"
       if(blockHour < currentHour){
-        this.addClass("past");
+        $(this).addClass("past");
       } else 
       
       if(blockHour === currentHour){
-        this.removeClass("past").addClass("present");
+        $(this).removeClass("past").addClass("present");
       } else{
-        this.removeClass("past present").addClass("future");
+        $(this).removeClass("past present").addClass("future");
       }
 
 
